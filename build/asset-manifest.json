@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/public/index.html/static/css/main.fd0164d1.css",
+    "main.js": "/public/index.html/static/js/main.9276d565.js",
+    "static/media/fa-solid-900.svg": "/public/index.html/static/media/fa-solid-900.33f11e8e33e406b0dc21.svg",
+    "static/media/fa-brands-400.svg": "/public/index.html/static/media/fa-brands-400.5f2a2f236048660df440.svg",
+    "static/media/arpit.jpg": "/public/index.html/static/media/arpit.167778020b4975adac94.jpg",
+    "static/media/Montserrat-Regular.ttf": "/public/index.html/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/ino.png": "/public/index.html/static/media/ino.adcd3743af4c9c5e57b5.png",
+    "static/media/fa-solid-900.eot": "/public/index.html/static/media/fa-solid-900.d93bcbbb0fbfad39d905.eot",
+    "static/media/fa-solid-900.ttf": "/public/index.html/static/media/fa-solid-900.aae41ea25bd0dde9f796.ttf",
+    "static/media/GisLogo.png": "/public/index.html/static/media/GisLogo.f03f786df8d69aaa66c2.png",
+    "static/media/fa-regular-400.svg": "/public/index.html/static/media/fa-regular-400.c803f540f9bff56c95a4.svg",
+    "static/media/fa-brands-400.eot": "/public/index.html/static/media/fa-brands-400.b09f783b99c88d6989f7.eot",
+    "static/media/fa-brands-400.ttf": "/public/index.html/static/media/fa-brands-400.ec7723ea62ad74c14959.ttf",
+    "static/media/GoogleSans-Italic.ttf": "/public/index.html/static/media/GoogleSans-Italic.40bb50bd202405745006.ttf",
+    "static/media/GoogleSans-MediumItalic.ttf": "/public/index.html/static/media/GoogleSans-MediumItalic.56d4f777a7997e5a10b3.ttf",
+    "static/media/GoogleSans-BoldItalic.ttf": "/public/index.html/static/media/GoogleSans-BoldItalic.d282e9c31d0f894a7f06.ttf",
+    "static/media/GoogleSans-Regular.ttf": "/public/index.html/static/media/GoogleSans-Regular.bec0591b6a291c3ca895.ttf",
+    "static/media/GoogleSans-Medium.ttf": "/public/index.html/static/media/GoogleSans-Medium.963c3e555aaada9ef8a9.ttf",
+    "static/media/GoogleSans-Bold.ttf": "/public/index.html/static/media/GoogleSans-Bold.d907e4bf3e32637a636e.ttf",
+    "static/media/fa-solid-900.woff": "/public/index.html/static/media/fa-solid-900.3ef4f1acb44a2df412bf.woff",
+    "static/media/Agustina.woff": "/public/index.html/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/fa-brands-400.woff": "/public/index.html/static/media/fa-brands-400.dc957891d535aa198135.woff",
+    "static/media/fa-solid-900.woff2": "/public/index.html/static/media/fa-solid-900.4a83f63fd7dd55c4ca85.woff2",
+    "static/media/fa-brands-400.woff2": "/public/index.html/static/media/fa-brands-400.1c638e5f7632ea819e77.woff2",
+    "static/media/fa-regular-400.eot": "/public/index.html/static/media/fa-regular-400.86ce78132c18df414d83.eot",
+    "static/media/fa-regular-400.ttf": "/public/index.html/static/media/fa-regular-400.235a1aa30ba10c7d00d0.ttf",
+    "static/media/fa-regular-400.woff": "/public/index.html/static/media/fa-regular-400.2ccf005a6998d30de3d3.woff",
+    "static/media/fa-regular-400.woff2": "/public/index.html/static/media/fa-regular-400.e5917ad1531005ea8c3f.woff2",
+    "static/media/buld.jpg": "/public/index.html/static/media/buld.55444b9789a64f32e2e5.jpg",
+    "index.html": "/public/index.html/index.html",
+    "main.fd0164d1.css.map": "/public/index.html/static/css/main.fd0164d1.css.map",
+    "main.9276d565.js.map": "/public/index.html/static/js/main.9276d565.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd0164d1.css",
+    "static/js/main.9276d565.js"
+  ]
+}
