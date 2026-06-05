@@ -1,65 +1,156 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import ExperienceAccordion from "../../containers/experienceAccordion/ExperienceAccordion.js";
 import "./Experience.css";
 import { experience } from "../../portfolio.js";
-import { Fade } from "react-reveal";
-import ExperienceImg from "./ExperienceImg";
 
-function Experience(props) {
-  const theme = props.theme;
-  console.log(props.setTheme);
+function useReveal(delay = 0) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setTimeout(() => el.classList.add("sr-visible"), delay);
+          obs.unobserve(el);
+        }
+      },
+      { threshold: 0.06 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [delay]);
+  return ref;
+}
+
+function TimelineCard({ exp, index }) {
+  const ref = useReveal(index * 180);
+
   return (
-    <div className="experience-main">
-      <Header theme={theme} setTheme={props.setTheme} />
-      <div className="basic-experience">
-        <Fade bottom duration={2000} distance="40px">
-          <div className="experience-heading-div">
-            <div className="experience-heading-img-div">
-              <ExperienceImg theme={theme} />
-            </div>
-            <div className="experience-heading-text-div">
-              <h1
-                className="experience-heading-text"
-                style={{ color: theme.text }}
-              >
-                {experience.title}
-              </h1>
-              <h3
-                className="experience-heading-sub-text"
-                style={{ color: theme.text }}
-              >
-                {experience["subtitle"]}
-              </h3>
-              <p
-                className="experience-header-detail-text subTitle"
-                style={{ color: theme.secondaryText }}
-              >
-                <div className="description">
-                  <p style={{textAlign: 'left'}}>
-                    Passionate React Native Developer (2.5 years) building mobile applications.
-                  </p>
-                  <p style={{textAlign: 'left'}}>
-                    Experienced in :
-                  </p>
-                  <ul>
-                    <li style={{textAlign: 'left'}}>Building and maintaining cross-platform mobile apps with React Native</li>
-                    <li style={{textAlign: 'left'}}>Designing and developing pixel-perfect UI components</li>
-                    <li style={{textAlign: 'left'}}>Utilizing TypeScript for enhanced code maintainability and type safety</li>
-                    <li style={{textAlign: 'left'}}>Consuming and manipulating data through REST APIs</li>
-                    <li style={{textAlign: 'left'}}>Version control using Git for efficient collaboration</li>
-                    <li style={{textAlign: 'left'}}>Native development tools - Android Studio and Xcode (for deep integrations)</li>
-                  </ul>
-                </div>
+    <div ref={ref} className="tl-card sr-fade-up">
+      {/* Spine dot */}
+      <div
+        className="tl-dot"
+        style={{ background: exp.color, boxShadow: `0 0 18px 4px ${exp.color}80` }}
+      />
 
-              </p>
+      {/* Card */}
+      <div className="tl-body" style={{ "--accent": exp.color }}>
+
+        {/* Top strip */}
+        <div className="tl-top-strip" style={{ background: `linear-gradient(135deg, ${exp.color}22, transparent 60%)` }} />
+
+        {/* Header */}
+        <div className="tl-header">
+          <div className="tl-header-left">
+            <div className="tl-number" style={{ color: exp.color }}>0{index + 1}</div>
+            <div>
+              <span className="tl-duration" style={{ color: exp.color }}>{exp.duration}</span>
+              <h2 className="tl-role">{exp.title}</h2>
+              <div className="tl-meta">
+                <a
+                  href={exp.company_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="tl-company"
+                  style={{ color: exp.color }}
+                >
+                  {exp.company}
+                </a>
+                <span className="tl-sep">·</span>
+                <span className="tl-location">{exp.location}</span>
+              </div>
             </div>
           </div>
-        </Fade>
+          <div
+            className="tl-badge"
+            style={{
+              background: `${exp.color}18`,
+              borderColor: `${exp.color}50`,
+              color: exp.color,
+            }}
+          >
+            {index === 0 ? "● Current" : "Previous"}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div
+          className="tl-divider"
+          style={{ background: `linear-gradient(to right, ${exp.color}70, ${exp.color}20, transparent)` }}
+        />
+
+        {/* Two-column layout: bullets left, summary right */}
+        <div className="tl-content">
+          <ul className="tl-bullets">
+            {exp.bullets.map((b, i) => (
+              <li key={i} className="tl-bullet">
+                <span className="tl-bullet-dot" style={{ background: exp.color }} />
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          {/* Right column: description + tags */}
+          <div className="tl-aside">
+            <p className="tl-desc">{exp.description}</p>
+            <div className="tl-tags">
+              {exp.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="tl-tag"
+                  style={{ borderColor: `${exp.color}40`, color: exp.color }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <ExperienceAccordion sections={experience["sections"]} theme={theme} />
-      <Footer theme={props.theme} onToggle={props.onToggle} />
+    </div>
+  );
+}
+
+function Experience(props) {
+  const theme   = props.theme;
+  const titleRef = useReveal(0);
+  const subRef   = useReveal(130);
+  const allExps  = experience.sections.flatMap((s) => s.experiences);
+
+  return (
+    <div className="exp-page">
+      <Header theme={theme} setTheme={props.setTheme} />
+
+      {/* Hero */}
+      <div className="exp-hero">
+        <div ref={titleRef} className="sr-fade-up">
+          <p className="exp-eyebrow" style={{ color: theme.accentColor }}>
+            // My Journey
+          </p>
+          <h1 className="exp-title" style={{ color: theme.text }}>
+            Experience
+          </h1>
+        </div>
+        <p
+          ref={subRef}
+          className="exp-subtitle sr-fade-up"
+          style={{ color: theme.secondaryText }}
+        >
+          {experience.description}
+        </p>
+      </div>
+
+      {/* Timeline */}
+      <div className="tl-wrap">
+        <div className="tl-spine" />
+        {allExps.map((exp, i) => (
+          <TimelineCard key={exp.title} exp={exp} index={i} />
+        ))}
+      </div>
+
+      <Footer theme={theme} onToggle={props.onToggle} />
     </div>
   );
 }

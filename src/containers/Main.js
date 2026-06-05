@@ -1,123 +1,28 @@
 import React from "react";
 import { Route, Switch, HashRouter } from "react-router-dom";
 import Home from "../pages/home/HomeComponent";
-import Splash from "../pages/splash/Splash";
 import Experience from "../pages/experience/Experience";
 import Contact from "../pages/contact/ContactComponent";
-import { settings } from "../portfolio.js";
+import SpaceBackground from "../components/spaceBackground/SpaceBackground";
+import { themes } from "../theme";
 
-export default function Main(propss) {
-  if (settings.isSplash) {
-    return (
-      <div>
+const theme     = themes.dark;
+const pageLayer = { position: "relative", zIndex: 1 };
+
+export default function Main() {
+  return (
+    <>
+      <SpaceBackground />
+      <div style={pageLayer}>
         <HashRouter basename="/">
           <Switch>
-            <Route
-              path="/"
-              exact
-              render={(props) => (
-                <Splash
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/home"
-              render={(props) => (
-                <Home
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/experience"
-              exact
-              render={(props) => (
-                <Experience
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/contact"
-              render={(props) => (
-                <Contact
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/splash"
-              render={(props) => (
-                <Splash
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
+            <Route path="/"          exact render={() => <Home       theme={theme} />} />
+            <Route path="/home"            render={() => <Home       theme={theme} />} />
+            <Route path="/experience"      render={() => <Experience theme={theme} />} />
+            <Route path="/contact"         render={() => <Contact    theme={theme} />} />
           </Switch>
         </HashRouter>
       </div>
-    );
-  } else {
-    return (
-      <div>
-        <HashRouter basename="/">
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={(props) => (
-                <Home
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/home"
-              render={(props) => (
-                <Home
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/experience"
-              exact
-              render={(props) => (
-                <Experience
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-            <Route
-              path="/contact"
-              render={(props) => (
-                <Contact
-                  {...props}
-                  theme={propss.theme}
-                  setTheme={propss.setTheme}
-                />
-              )}
-            />
-          </Switch>
-        </HashRouter>
-      </div>
-    );
-  }
+    </>
+  );
 }

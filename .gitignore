@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output (deployed separately via npm run deploy to gh-pages branch)
+build/
+
+# OS
+.DS_Store
+.env
+.env.local
+.env.production
+
+# Editor
+.vscode/
+.idea/
+
+# Netlify
+.netlify
+
+# Logs
+npm-debug.log*
+yarn-error.log*

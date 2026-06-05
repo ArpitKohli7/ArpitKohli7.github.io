@@ -1,0 +1,102 @@
+/* Hide native cursor everywhere */
+*, *::before, *::after { cursor: none !important; }
+
+/* ── Dot — snaps instantly ─────────────────────────────── */
+.c-dot {
+  position: fixed;
+  top:  -5px;
+  left: -5px;
+  width:  10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform;
+  /* No transition — snaps to cursor instantly */
+  transition: opacity 0.15s ease, background 0.15s ease, transform 0.05s ease;
+  contain: strict;
+}
+
+.c-dot.cursor-hover {
+  opacity: 0.35;
+  background: #61DAFB;
+  transform: scale(0.5) !important;
+}
+
+.c-dot.cursor-click {
+  transform: scale(0.25) !important;
+  opacity: 0.6;
+}
+
+/* ── Ring — trails via CSS transition (GPU only, no JS) ── */
+.c-ring {
+  position: fixed;
+  top:  -18px;
+  left: -18px;
+  width:  36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(97, 218, 251, 0.6);
+  pointer-events: none;
+  z-index: 999998;
+  will-change: transform;
+  /* This one line replaces the entire RAF lerp loop */
+  transition:
+    transform     0.13s cubic-bezier(0.22, 1, 0.36, 1),
+    width         0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    height        0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    top           0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    left          0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color  0.2s ease,
+    background    0.2s ease,
+    box-shadow    0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  contain: strict;
+}
+
+.c-ring.cursor-hover {
+  width:  54px;
+  height: 54px;
+  top:  -27px;
+  left: -27px;
+  border-color: rgba(97, 218, 251, 1);
+  background: rgba(97, 218, 251, 0.05);
+  box-shadow: 0 0 14px rgba(97, 218, 251, 0.22);
+}
+
+.c-ring.cursor-click {
+  width:  26px;
+  height: 26px;
+  top:  -13px;
+  left: -13px;
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Crosshair ticks */
+.c-line {
+  position: absolute;
+  background: transparent;
+  border-radius: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.c-line-h {
+  width: 1px; height: 1px;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -12px 0 0 1px rgba(97,218,251,0.5), 12px 0 0 1px rgba(97,218,251,0.5);
+}
+
+.c-line-v {
+  width: 1px; height: 1px;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 -12px 0 1px rgba(97,218,251,0.5), 0 12px 0 1px rgba(97,218,251,0.5);
+}
+
+.c-ring.cursor-hover .c-line-h,
+.c-ring.cursor-hover .c-line-v { opacity: 0; }
