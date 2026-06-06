@@ -70,7 +70,7 @@ const SKILL_CARDS = [
 ];
 
 const TECH_STACK = [
-  { name: "JavaScript", icon: "simple-icons:javascript", bg: "#F7DF1E", color: "#000"     },
+  { name: "JavaScript", icon: "simple-icons:javascript", bg: "#F7DF1E", color: "#000", glow: "#F7DF1E" },
   { name: "TypeScript",  icon: "simple-icons:typescript", bg: "#3178C6", color: "#fff"     },
   { name: "React",       icon: "simple-icons:react",      bg: "#0a1929", color: "#61DAFB"  },
   { name: "Redux",       icon: "simple-icons:redux",      bg: "#0a1929", color: "#764ABC"  },
@@ -150,7 +150,7 @@ export default function SkillSection() {
               key={t.name}
               className="tech-badge sr-scale reveal-item"
               data-delay={i * 55}
-              style={{ "--icon-color": t.color }}
+              style={{ "--icon-color": t.glow || t.color }}
             >
               <div
                 className="tech-badge-icon"
