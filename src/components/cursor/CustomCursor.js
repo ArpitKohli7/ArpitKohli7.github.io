@@ -16,9 +16,9 @@ export default function CustomCursor() {
     function onMove(e) {
       const x = e.clientX;
       const y = e.clientY;
-      // Both elements updated via transform; ring trails via CSS transition
-      dot.style.transform  = `translate(${x}px, ${y}px)`;
-      ring.style.transform = `translate(${x}px, ${y}px)`;
+      // -50% centres both elements regardless of their size — no top/left conflict
+      dot.style.transform  = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+      ring.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
     }
 
     // Hover: event delegation on document — one listener total

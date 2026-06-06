@@ -16,7 +16,7 @@ const greeting = {
   full_name: "Arpit Kohli",
   subTitle: "Senior Software Engineer. React & React Native Developer.",
   resumeLink:
-    "https://drive.google.com/file/d/1hP0Ie2BcHuY5XrpvTznGUPKeLP4qA4n1/view?usp=sharing",
+    "https://drive.google.com/file/d/1iygRuvx6kt4E-0BKsDgBH5vj0Whm0yNv/view?usp=sharing",
   mail: "mailto:kohliarpit81@gmail.com",
 };
 
