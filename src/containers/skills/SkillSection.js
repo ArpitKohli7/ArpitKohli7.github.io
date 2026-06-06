@@ -150,6 +150,7 @@ export default function SkillSection() {
               key={t.name}
               className="tech-badge sr-scale reveal-item"
               data-delay={i * 55}
+              style={{ "--icon-color": t.color }}
             >
               <div
                 className="tech-badge-icon"
