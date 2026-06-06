@@ -130,7 +130,8 @@ const experience = {
           logo_path: "companyLogo.jpeg",
           duration: "July 2024 – Present",
           location: "Noida, India",
-          description: "Built the NextGen dashboard inside Veeva CRM for pharma enterprise sales teams.",
+          description:
+            "Built the NextGen dashboard inside Veeva CRM for pharma enterprise sales teams.",
           bullets: [
             "Developed the NextGen dashboard using React and Recoil for global state management inside Veeva CRM",
             "Integrated Salesforce data querying via local DB queries to fetch and display real-time sales data",
@@ -138,7 +139,14 @@ const experience = {
             "Implemented Recoil-based caching to eliminate redundant API calls across the entire app session",
             "Delivered pixel-perfect responsive UI across web and iPad in both portrait and landscape orientations",
           ],
-          tags: ["React", "Recoil", "JavaScript", "Veeva CRM", "Salesforce", "iPad UI"],
+          tags: [
+            "React",
+            "Recoil",
+            "JavaScript",
+            "Veeva CRM",
+            "Salesforce",
+            "iPad UI",
+          ],
           color: "#0066CC",
         },
         {
@@ -148,14 +156,22 @@ const experience = {
           logo_path: "companyLogo.jpeg",
           duration: "Oct 2021 – Mar 2024",
           location: "New Delhi, India",
-          description: "Led mobile app development from concept to production across iOS and Android.",
+          description:
+            "Led mobile app development from concept to production across iOS and Android.",
           bullets: [
             "Led end-to-end development and deployment of multiple React Native apps on iOS and Android",
             "Delivered pixel-perfect cross-platform UI across diverse device sizes and OS versions",
             "Built reusable UI components with TypeScript promoting maintainability and faster dev cycles",
             "Integrated RESTful APIs for seamless data flow across all application layers",
           ],
-          tags: ["React Native", "TypeScript", "Redux", "REST APIs", "iOS", "Android"],
+          tags: [
+            "React Native",
+            "TypeScript",
+            "Redux",
+            "REST APIs",
+            "iOS",
+            "Android",
+          ],
           color: "#E3405F",
         },
       ],
