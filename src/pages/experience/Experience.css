@@ -106,19 +106,32 @@
   border-radius: 24px;
   padding: 36px 40px 32px;
   overflow: hidden;
+  /* Only transform + border-color — both GPU composited, zero repaint */
   transition:
-    transform   0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow  0.4s ease,
+    transform    0.4s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.3s ease;
+}
+
+/* Glow on ::after with opacity transition — no box-shadow animation cost */
+.tl-body::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 35px -8px var(--accent, rgba(97,218,251,0.3));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .tl-body:hover {
   transform: translateY(-5px);
   border-color: var(--accent, rgba(97,218,251,0.35));
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.5),
-    0 0 0 1px var(--accent, rgba(97,218,251,0.2)),
-    0 0 40px -10px var(--accent, rgba(97,218,251,0.25));
+}
+
+.tl-body:hover::before {
+  opacity: 1;
 }
 
 /* Gradient top-left corner splash */
