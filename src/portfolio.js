@@ -17,6 +17,8 @@ const greeting = {
   subTitle: "Senior Software Engineer. React & React Native Developer.",
   resumeLink:
     "https://drive.google.com/file/d/1iygRuvx6kt4E-0BKsDgBH5vj0Whm0yNv/view?usp=sharing",
+  resumeDownloadLink:
+    "https://drive.google.com/uc?export=download&id=1iygRuvx6kt4E-0BKsDgBH5vj0Whm0yNv",
   mail: "mailto:kohliarpit81@gmail.com",
 };
 
@@ -159,10 +161,9 @@ const experience = {
           description:
             "Led mobile app development from concept to production across iOS and Android.",
           bullets: [
-            "Led end-to-end development and deployment of multiple React Native apps on iOS and Android",
-            "Delivered pixel-perfect cross-platform UI across diverse device sizes and OS versions",
-            "Built reusable UI components with TypeScript promoting maintainability and faster dev cycles",
-            "Integrated RESTful APIs for seamless data flow across all application layers",
+            "Led the development and deployment of multiple React Native applications from concept to production across iOS and Android platforms.",
+            "Single-handedly built and shipped Myth of Aphrodite, a cross-platform React Native app now live on the Google Play Store with 10,000+ downloads, owning the full lifecycle from concept to release.",
+            "Implemented in-app audio tours, interactive maps with geo-located points of interest, and multi-language content; delivered pixel-perfect, responsive UI across diverse device sizes and OS versions.",
           ],
           tags: [
             "React Native",
