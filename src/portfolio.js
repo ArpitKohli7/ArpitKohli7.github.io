@@ -1,5 +1,5 @@
 /* Change this file to get your personal Portfolio */
-
+// new changes
 // Website related settings
 const settings = {
   isSplash: false,
