@@ -16,9 +16,9 @@ const greeting = {
   full_name: "Arpit Kohli",
   subTitle: "Senior Software Engineer. React & React Native Developer.",
   resumeLink:
-    "https://drive.google.com/file/d/1iygRuvx6kt4E-0BKsDgBH5vj0Whm0yNv/view?usp=sharing",
+    "https://drive.google.com/file/d/1FLMtkhWR7G7J1HgNY87frrL3GHbDlqyl/view?usp=sharing",
   resumeDownloadLink:
-    "https://drive.google.com/uc?export=download&id=1iygRuvx6kt4E-0BKsDgBH5vj0Whm0yNv",
+    "https://drive.google.com/uc?export=download&id=1FLMtkhWR7G7J1HgNY87frrL3GHbDlqyl",
   mail: "mailto:kohliarpit81@gmail.com",
 };
 
